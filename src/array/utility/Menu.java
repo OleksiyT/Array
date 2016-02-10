@@ -24,13 +24,19 @@ public class Menu {
                 System.exit(0);
             if (check)
             {
-                int temp = Integer.parseInt(input);
-                if(temp > 0 && temp <11) {
-                    arraysize = temp;
-                    menuState = false;
-                }
-                else
-                    System.out.print(Localization.ERROR);
+               try {
+                   int temp = Integer.parseInt(input);
+                   if (temp > 0 && temp < 11) {
+                       arraysize = temp;
+                       menuState = false;
+                   } else
+                       System.out.print(Localization.ERROR);
+               }
+
+                catch (NumberFormatException e) {
+                System.out.println(Localization.ERROR);
+            }
+
             }
             else
                 System.out.print(Localization.ERROR);
